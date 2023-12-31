@@ -1,24 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import ToastContainer, { toast } from "./components/Toast";
 
 function App() {
+  const showInfo = () => toast.info("This is an info message")
+  const showError = () => toast.error("This is an error message")
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <button className="btn btn-primary m-3" onClick={showInfo}>Show info toast</button> <br />
+      <button className="btn btn-danger m-3" onClick={showError}>Show error toast</button>
+      <ToastContainer />
+    </>
   );
 }
 
